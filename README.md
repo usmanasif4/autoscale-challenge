@@ -30,15 +30,9 @@ Example Considerations:
 * We have a rake task that terminates idle instances.
 
 ### Example tasks
-#### Task to perform the autoscaling
-- rake autoscale:scale_servers
 #### Task to create the jobs
 - rake autoscale:create_and_enqueue_jobs
-#### Task to create the jobs on EC2
-- rake autoscale:create_and_enqueue_jobs
-#### Task to perform the autoscaling on EC2
-- rake autoscale:scale_ec2_servers
-#### Task to emilinate the idle worker instances on development
+#### Task to perform the autoscaling
+- rake autoscale:scale_servers
+#### Task to terminate the idle worker instances
 -  rake autoscale:terminate_idle_instances
-#### Task to emilinate the idle worker instances on EC2
--  rake autoscale:terminate_ec2_idle_instances
