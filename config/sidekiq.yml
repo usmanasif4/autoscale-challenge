@@ -1,0 +1,5 @@
+:max_retries: 1
+:queues:
+  - [priority, 3]
+  - [misc, 2]
+  - [heavy, 1]

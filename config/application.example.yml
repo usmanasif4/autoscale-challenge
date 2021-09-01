@@ -1,0 +1,3 @@
+development:
+  THREADS: 10.0
+  ENQUEUE_MAX_JOBS: 100

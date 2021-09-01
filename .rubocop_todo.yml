@@ -1,0 +1,36 @@
+
+inherit_from: .rubocop_todo.yml
+
+inherit_mode:
+  # Merge the Exclude arrays together. This is helpful so that the Todo file's
+  # lists are merged with the configuration below.
+  merge:
+    - Exclude
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - config/**/*
+    - bin/*
+  NewCops: enable
+Metrics/BlockLength:
+  Exclude:
+    - Rakefile
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+Metrics/AbcSize:
+  # This has been set to the first quartile of our offenses as of commit
+  # 296c9e0f. This can be recomputed by removing this override here and in the
+  # .rubocop_todo.yml file and running:
+  # bundle exec rubocop -f e | perl -pe 's/.* (\d+\.\d+)\/17\]/$1/' | datamash -H mean 1 q1 1
+  Max: 20
+
+RSpec/NestedGroups:
+  Max: 7
+RSpec/MultipleMemoizedHelpers:
+  Max: 7
+RSpec/MultipleExpectations:
+  Enabled: false
